@@ -47,6 +47,14 @@ The instructions are tested on Ubuntu 16.04 with python 2.7 and tensorflow 1.0 w
     ```
 
 ## Demo:
+- Covert the raw to the depth map image format:
+  1. Copy the raw binary file in ./data/lidar_raw/
+  2. Execute ```Shell
+  cd $SQSG_ROOT/
+  python ./src/process_raw_file.py
+  ```
+  3. Find the *.npy inside the ./data/lidar_2d/
+
 - To run the demo script:
   ```Shell
   cd $SQSG_ROOT/
