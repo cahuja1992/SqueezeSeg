@@ -13,6 +13,7 @@ class kitti(imdb):
     imdb.__init__(self, 'kitti_'+image_set, mc)
     self._image_set = image_set
     self._data_root_path = data_path
+    self._lidar_raw_path = os.path.join(self._data_root_path, 'lidar_raw') 
     self._lidar_2d_path = os.path.join(self._data_root_path, 'lidar_2d')
     self._gta_2d_path = os.path.join(self._data_root_path, 'gta')
 
@@ -46,3 +47,9 @@ class kitti(imdb):
     assert os.path.exists(lidar_2d_path), \
         'File does not exist: {}'.format(lidar_2d_path)
     return lidar_2d_path
+
+  def _lidar_raw_path_at(self, idx):
+    lidar_raw_path = os.path.join(self._lidar_raw_path, idx+'.npy')
+
+    assert os.path.exists(lidar_raw_path), 'File does not exist: {}'.format(lidar_raw_path)
+    return lidar_raw_path
